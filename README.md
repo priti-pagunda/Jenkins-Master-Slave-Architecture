@@ -130,7 +130,6 @@ Then re-create the credential in Jenkins (**Enter directly**, pasting the full k
 ```
 .
 ├── README.md
-└── docs/
     └── screenshots/
         ├── 01-ssh-plugins-installed.png
         ├── 02-add-ssh-credential.png
@@ -141,3 +140,18 @@ Then re-create the credential in Jenkins (**Enter directly**, pasting the full k
         ├── 07-agent-terminal-workspace.png
         └── 08-agent-terminal-cloned-files.png
 ```
+
+✅ Project Outcome
+
+Objective: Set up a Jenkins Master-Slave (Controller-Agent) architecture where the Jenkins controller delegates build jobs to a remote agent node over SSH.
+Result: Successfully achieved
+
+Jenkins Controller running on EC2 (Ubuntu)✅ Done<br>
+SSH plugins installed (SSH Build Agents, SSH Credentials, Mina SSHD)✅ Done<br>
+SSH key format issue (libcrypto error) resolved via PEM-format key regeneration✅ Resolved<br>
+SSH credential (node-1-key) added to Jenkins✅ Done<br>
+Agent node node-1 configured and connected via SSH✅<br>
+ConnectedJob pull-job-on-node-1 created, restricted to run only on node-1✅ Done<br>
+Job executed a Git clone of springboot-java-project remotely on the agent✅ Build #1 — SUCCESS<br>
+Verified cloned files physically present in agent's workspace✅ Confirmed
+
